@@ -888,7 +888,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc', 'json', 'groovy' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -951,6 +951,9 @@ require('lazy').setup({
     },
   },
 })
+
+vim.filetype.add { pattern = { ['.*%.nf'] = 'groovy' } }
+vim.filetype.add { pattern = { ['.*%.config'] = 'json' } }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
